@@ -1,0 +1,518 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+}
+:root {
+  /* 12px */
+  --font-x-12: 0.75rem;
+  /* 14px */
+  --font-xl-14: 0.875rem;
+  /* 15px */
+  --font-xxl-15: 0.9375rem;
+  /* 16px */
+  --font-xxxl-16: 1rem;
+  /* 18px */
+  --font-xxxxl-18: 1.125rem;
+  /* 22px */
+  --font-xxxxxl-22: 1.375rem;
+  /* 500 */
+  --font-weight-x-400: 400;
+  /* 500 */
+  --font-weight-xl-500: 500;
+  /* 600 */
+  --font-weight-xxl-600: 600;
+  /* 700 */
+  --font-weight-xxxl-700: 700;
+  --color-1: #191918;
+  --color-2: #31302e;
+  --color-3: #78736f;
+  --color-4: #615d59;
+}
+li {
+  list-style-type: none;
+}
+.header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  width: 100%;
+  max-height: 66px;
+  padding: 15px 16px;
+}
+.header_logo_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header_logo {
+  max-height: 30px;
+}
+.navbar {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  max-height: calc(100vh - 180px);
+  padding: 24px 16px;
+  overflow-y: scroll;
+}
+.navbar_lists {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+  padding-bottom: 12px;
+}
+.navbar_lists_list {
+  width: 100%;
+  font-size: var(--font-xxxxxl-22);
+  font-weight: var(--font-weight-xxl-600);
+  font-style: bold;
+  border-radius: 4px;
+}
+.navbar_lists_list_text_container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.navbar_lists_list_text_arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10.5px;
+}
+.navbar_lists_list_text--primary {
+  display: none;
+}
+.navbar_lists_list--request {
+  display: none;
+}
+.header_buttons_container {
+  display: flex;
+  justify-content: flex-end;
+}
+.header_buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.header_buttons_loginbtn {
+  display: none;
+  font-size: var(--font-xl-14);
+  font-weight: var(--font-weight-xl-500);
+  padding: 5px 10px;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.header_buttons_notionbtn {
+  text-align: center;
+  min-width: 134px;
+  height: 36px;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 4px 16px;
+  font-size: var(--font-xl-14);
+  font-weight: var(--font-weight-xl-500);
+  color: white;
+  background-color: #0075de;
+  cursor: pointer;
+}
+.header_buttons_menubtn {
+  border: none;
+  background-color: transparent;
+}
+.navbar_ButtonsContainer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  min-height: 120px;
+  padding: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.navbar_ButtonsContainer_downloadBtn,
+.navbar_ButtonsContainer_loginBtn {
+  padding: 4px 14px;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: var(--font-xxxl-16);
+  font-weight: var(--font-weight-xl-500);
+}
+.navbar_ButtonsContainer_loginBtn {
+  color: #0075de;
+}
+.navbar_ButtonsContainer_downloadBtn {
+  background-color: #0075de;
+  color: white;
+}
+/* notion lists */
+.navbar_lists_Notion_lists {
+  /* display: none; */
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+.navbar_lists_Notion_lists_container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.navbar_lists_Notion_lists_list_container--primary,
+.navbar_lists_Notion_lists_list_container--secondary,
+.navbar_lists_Notion_lists_list_container--tertiary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+}
+.navbar_lists_Notion_lists_list_container--secondary,
+.navbar_lists_Notion_lists_list_container--tertiary {
+  margin-top: 12px;
+}
+.line {
+  width: 100%;
+  height: 1px;
+  margin-top: 16px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.navbar_lists_Notion_lists_list_container_headertext {
+  display: none;
+}
+.navbar_lists_Notion_lists_list-header {
+  margin-top: 2px;
+  margin-bottom: 4px;
+  font-size: var(--font-xxxxl-18);
+  font-weight: var(--font-weight-xxl-600);
+  color: var(--color-2);
+}
+.navbar_lists_Notion_lists_list_text {
+  font-size: var(--font-x-12);
+  font-weight: var(--font-weight-x-400);
+  color: var(--color-3);
+}
+.new {
+  padding: 2.5px 7px;
+  border-radius: 1000px;
+  font-size: var(--font-x-12);
+  font-weight: var(--font-weight-x-600);
+  color: #005bab;
+  background-color: #f2f9ff;
+}
+.navbar_lists_Notion_lists_list-header--FontSmall {
+  font-size: var(--font-xxl-15);
+  font-weight: var(--font-weight-xl-500);
+}
+.navbar_notion_lists_list_headertextcontainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.navbar_lists_Notion_lists_list_container---quinary,
+.navbar_lists_Notion_lists_list_download {
+  display: none;
+}
+.navbar_lists_Notion_lists_list_container--quinary_container--primary {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+  min-width: 55%;
+  border-radius: 5px;
+}
+.navbar_lists_Notion_lists_list_container---quinary {
+  background-color: #f7f7f7;
+}
+.navbar_lists_Notion_lists_list_container--quinary_text {
+  max-width: 240px;
+  font-size: var(--font-xxl-15);
+  font-weight: 450;
+  line-height: 25px;
+}
+.navbar_lists_Notion_lists_list_container--quinary_downloadBtn {
+  font-size: var(--font-xxxl-16);
+  font-weight: var(--font-weight-xxl-600);
+  border: none;
+  width: 90%;
+  padding: 0.55rem;
+  border-radius: 8px;
+  background-color: #0075de;
+  color: white;
+}
+/* more lists */
+.navbar_lists_More_lists {
+  display: none;
+  margin-top: 16px;
+}
+.navbar_lists_More_lists_container {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+}
+.navbar_lists_More_lists_list_container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+.navbar_lists_more_lists_list_container_headertext {
+  font-size: var(--font-xxl-15);
+  font-weight: var(--font-weight-xl-500);
+  color: #a39e98;
+}
+.navbar_lists_more_lists_list {
+  font-size: var(--font-xxxxl-18);
+  font-weight: var(--font-weight-xxl-600);
+  color: var(--color-2);
+}
+.navbar_lists_more_lists_list--fontSmall {
+  font-size: var(--font-xxl-15) !important;
+  font-weight: var(--font-weight-xl-500) !important;
+}
+.navbar_notion_listscontainer--tertiary_iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.navbar_notion_listscontainer--tertiary_icon {
+  max-width: 180px;
+  height: 110px;
+}
+@media (min-width: 768px) {
+  .navbar {
+    max-height: calc(100vh - 132px);
+  }
+  .navbar_ButtonsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    min-height: 69px;
+  }
+}
+@media (min-width: 840px) {
+  .header_buttons_loginbtn {
+    display: block;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .navbar_list_ButtonsContainer_downloadBtn {
+    width: 100% !important;
+  }
+}
+@media (min-width: 1200px) {
+  .header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 66px;
+    padding-block: 0;
+    padding-inline: 25px;
+  }
+  .header_logo_container {
+    justify-content: start;
+  }
+  .header_buttons_menubtn {
+    display: none;
+  }
+  .header_buttons_loginbtn:hover {
+    background-color: #0000000d;
+  }
+  .header_buttons_notionbtn:hover {
+    background-color: #005bab;
+  }
+  .navbar {
+    position: relative;
+    top: 0;
+    overflow-y: visible;
+  }
+  .navbar_lists {
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    padding-bottom: 0px;
+  }
+  .line {
+    display: none;
+  }
+  .navbar_ButtonsContainer {
+    display: none;
+  }
+  .navbar_lists_Notion_lists,
+  .navbar_lists_More_lists {
+    /* display: none; */
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    width: 100vw;
+    min-height: inherit;
+    padding: 24px 97px 32px 87px;
+    transform: translateX(-50%);
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 4px -2px;
+  }
+  .navbar_lists_Notion_lists_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 32px;
+  }
+  .navbar_lists_Notion_lists_list {
+    width: 100%;
+    padding: 8px;
+    margin-top: -4px !important;
+    border-radius: 8px;
+    cursor: pointer;
+    /* background-color: #0000000d; */
+  }
+  .navbar_lists_Notion_lists_list_container--primary,
+  .navbar_lists_Notion_lists_list_container--secondary,
+  .navbar_lists_Notion_lists_list_container--tertiary {
+    display: flex;
+    gap: 0px;
+  }
+  .navbar_lists_Notion_lists_list_container--tertiary {
+    margin-top: 0px;
+  }
+  .navbar_lists_Notion_lists_list_container_headertext {
+    display: block;
+    padding-left: 8px;
+    color: var(--color-4);
+  }
+  .navbar_lists_Notion_lists_list_download {
+    display: block;
+    max-width: 314px !important;
+  }
+  .navbar_lists_Notion_lists_list-header {
+    font-size: var(--font-xxxxxl-22);
+  }
+  .navbar_lists_Notion_lists_list_text {
+    padding-bottom: 2px;
+  }
+  .navbar_lists_Notion_lists_list div {
+    margin-top: -2px;
+  }
+  .navbar_lists_Notion_lists_list:hover {
+    background-color: #0000000d;
+  }
+  .navbar_lists_Notion_lists_list-header--FontSmall {
+    font-size: var(--font-xxl-15);
+  }
+  .navbar_lists_Notion_lists_list_container--secondary {
+    margin-top: 17px;
+  }
+  .navbar_lists_Notion_lists_list:nth-of-type(1) {
+    margin-top: 12px !important;
+  }
+  .navbar_lists_Notion_lists_list_container--tertiary_list:nth-of-type(1) {
+    margin-top: 12px;
+    /* background-color: #0000000d; */
+  }
+  .navbar_lists_Notion_lists_list_container---quinary {
+    /* display: block; */
+    grid-column: 1 / span 2;
+    display: flex;
+    max-height: 150px;
+    margin-top: 32px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(238 238 238);
+  }
+  .navbar_lists_Notion_lists_list_container--quinary_downloadBtn {
+    cursor: pointer;
+  }
+  .navbar_lists_Notion_lists_list_container--quinary_downloadBtn:hover {
+    background-color: #005bab;
+  }
+  .navbar_lists_list {
+    font-size: var(--font-xl-14);
+    font-weight: var(--font-weight-xl-500);
+    padding: 5px 10px;
+    letter-spacing: 0.0078125rem;
+    cursor: pointer;
+  }
+  .navbar_lists_list_text {
+    letter-spacing: 0.0078125rem;
+  }
+  .navbar_lists_list:hover {
+    background-color: #0000000d;
+  }
+  .navbar_lists_list_text--primary,
+  .navbar_lists_list--request {
+    display: block;
+  }
+  .navbar_lists_list_text--secondary {
+    display: none;
+  }
+  .navbar_lists_list--request {
+    min-width: 132px;
+  }
+  /* more */
+  .navbar_lists_More_lists_container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 32px;
+  }
+  .navbar_lists_More_lists_list_container {
+    gap: 0px;
+    margin-top: 8px;
+  }
+  .navbar_lists_more_lists_list_container_headertext:not(
+      .navbar_lists_more_lists_list_container_headertext--smallPadding
+    ) {
+    font-size: var(--font-xl-14);
+    padding-left: 8px;
+  }
+  .navbar_lists_more_lists_list {
+    padding: 8px;
+    margin-top: -4px;
+    border-radius: 8px;
+    font-size: var(--font-xxxxxl-22);
+  }
+  .navbar_lists_more_lists_list:hover {
+    background-color: #0000000d;
+  }
+  .navbar_lists_more_lists_list:nth-of-type(1) {
+    margin-top: 12px;
+  }
+  .navbar_lists_more_lists_list--smallPadding {
+    margin-top: -2px;
+    padding: 4px;
+  }
+  .navbar_lists_more_lists_list_container_headertext--smallPadding {
+    padding-left: 2px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .navbar_lists_Notion_lists_container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .navbar_lists_Notion_lists_list_container---quinary {
+    grid-column: 4/-1;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 23px;
+    height: 100%;
+    max-width: 280px;
+    max-height: none;
+    margin-top: 0px;
+  }
+  .navbar_lists_Notion_lists_list_container--quinary_downloadBtn {
+    max-width: 139px;
+  }
+  .navbar_notion_listscontainer--tertiary_icon {
+    height: 130px;
+  }
+}
